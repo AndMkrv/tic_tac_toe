@@ -12,8 +12,9 @@ def main():
     print('Ход сделан!')
     # Перерисовать поле с учётом сделанного хода.
     game.display()
-    print(dir(game))
 
 
 if __name__ == '__main__':
     main()
+
+print(print.__doc__)

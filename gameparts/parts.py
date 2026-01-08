@@ -1,20 +1,22 @@
 class Board:
-    # Инициализировать игровое поле - список списков с пробелами.
-    # Пробелы - это пустые клетки.
-    def __init__(self):
-        self.board = [[' ' for _ in range(3)] for _ in range(3)]
+    """Класс, который описывает игровое поле."""
 
-    # Метод, который обрабатывает ходы игроков.
+    field_size = 3
+
+    def __init__(self):
+        self.board = [
+            [' ' for _ in range(self.field_size)]
+            for _ in range(self.field_size)
+        ]
+
     def make_move(self, row, col, player):
         self.board[row][col] = player
 
-    # Метод, который отрисовывает игровое поле.
     def display(self):
         for row in self.board:
             print('|'.join(row))
             print('-' * 5)
-          
-    # Переопределяем метод __str__.
+
     def __str__(self):
         return (
             'Объект игрового поля размером '
